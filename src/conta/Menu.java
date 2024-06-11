@@ -31,7 +31,7 @@ public class Menu {public static void main(String[] args) {
         System.out.println("                                                     ");
         System.out.println("*****************************************************");
         System.out.println("Entre com a opção desejada:                          ");
-        System.out.println("                                                     ");
+        System.out.println("                                                     "+ Cores.TEXT_RESET);
 
         opcao = sc.nextInt();
 
@@ -44,43 +44,43 @@ public class Menu {public static void main(String[] args) {
 
         switch (opcao) {
             case 1:
-                System.out.println("Criar Conta\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Criar Conta\n\n");
 
                 break;
             case 2:
-                System.out.println("Listar todas as Contas\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Listar todas as Contas\n\n");
 
                 break;
             case 3:
-                System.out.println("Consultar dados da Conta - por número\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Consultar dados da Conta - por número\n\n");
 
                 break;
             case 4:
-                System.out.println("Atualizar dados da Conta\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Atualizar dados da Conta\n\n");
 
                 break;
             case 5:
-                System.out.println("Apagar a Conta\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Apagar a Conta\n\n");
 
                 break;
             case 6:
-                System.out.println("Saque\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Saque\n\n");
 
                 break;
             case 7:
-                System.out.println("Depósito\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Depósito\n\n");
 
                 break;
             case 8:
-                System.out.println("Transferência entre Contas\n\n");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Transferência entre Contas\n\n");
 
                 break;
             case 9:
-                System.out.println("Sair");
+                System.out.println(Cores.TEXT_WHITE_BOLD + "Sair");
 
                 break;
             default:
-                System.out.println("\nOpção Inválida!\n");
+                System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n");
                 break;
         }
     }

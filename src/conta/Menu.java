@@ -6,7 +6,18 @@ import conta.util.Cores;
 
 import conta.model.Conta;
 
-public class Menu {public static void main(String[] args) {
+public class Menu {
+    public static void main(String[] args) {
+
+        Conta c1 = new Conta(123456, 123, 1, "Lucas Carlos Batista", 3500.0f);
+        c1.visualiza();
+
+        Conta c2 = new Conta(123456, 123, 1, "Marta Carlos dos Santos", 5400.0f);
+        c2.visualiza();
+
+        c1.setSaldo(10000.0f);
+        c1.setTitular("Lucas Carlos Batista");
+        c1.visualiza();
 
     Scanner sc = new Scanner(System.in);
 
@@ -38,7 +49,7 @@ public class Menu {public static void main(String[] args) {
         opcao = sc.nextInt();
 
         if (opcao == 9) {
-            System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+            System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco Zeus - O seu Futuro começa aqui!");
             sobre();
             sc.close();
             System.exit(0);

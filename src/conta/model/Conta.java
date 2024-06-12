@@ -16,6 +16,7 @@ public class Conta {
             this.tipo = tipo;
             this.titular = titular;
             this.saldo = saldo;
+
     }
 
     //Métodos Get e Set da classe Conta
@@ -58,5 +59,8 @@ public class Conta {
 
     public void setSaldo(float saldo) {
         this.saldo = saldo;
+    }
+
+    public void visualiza() {
     }
 }

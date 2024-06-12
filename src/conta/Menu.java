@@ -2,7 +2,9 @@ package conta;
 
 import java.util.Scanner;
 
-import util.Cores;
+import conta.util.Cores;
+
+import conta.model.Conta;
 
 public class Menu {public static void main(String[] args) {
 

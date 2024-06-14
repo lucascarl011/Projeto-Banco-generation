@@ -45,7 +45,7 @@ public class Menu {
         opcao = sc.nextInt();
 
         if (opcao == 9) {
-            System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco Zeus - O seu Futuro começa aqui!");
+            System.out.println(Cores.TEXT_PURPLE_BOLD + "\nBanco Zeus - O seu Futuro começa aqui!");
             sobre();
             sc.close();
             System.exit(0);

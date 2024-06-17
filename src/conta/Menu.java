@@ -1,5 +1,7 @@
 package conta;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import conta.util.Cores;
 import conta.model.Conta;
@@ -9,13 +11,9 @@ import conta.model.ContaPoupanca;
 public class Menu {
     public static void main(String[] args) {
 
-        // Teste da Classe Conta
-        Conta c1 = new Conta(1, 123, 1, "Lucas Carlos Batista", 10000.0f);
-        c1.visualizar();
-        c1.sacar(12000.0f);
-        c1.visualizar();
-        c1.depositar(5000.0f);
-        c1.visualizar();
+        Scanner sc = new Scanner(System.in);
+
+        int opcao;
 
         // Teste da Classe Conta Corrente
         ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Marta Carlos", 1500.0f, 1000.0f);
@@ -26,19 +24,14 @@ public class Menu {
         cc1.visualizar();
 
         // Teste da Classe Conta Poupança
-        ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Carlos Roberto Batista", 100000.0f, 15);
+        ContaPoupanca cp1 = new ContaPoupanca(3, 123, 2, "Carlos Roberto Batista", 100000.0f, 15);
         cp1.visualizar();
         cp1.sacar(1000.0f);
         cp1.visualizar();
         cp1.depositar(5000.0f);
         cp1.visualizar();
 
-
-        Scanner sc = new Scanner(System.in);
-
-    int opcao;
-
-    while (true) {
+        while (true) {
 
         System.out.println(Cores.TEXT_PURPLE_BOLD + Cores.ANSI_BLACK_BACKGROUND
                          + "*****************************************************");
@@ -61,7 +54,13 @@ public class Menu {
         System.out.println("Entre com a opção desejada:                          ");
         System.out.println("                                                     "+ Cores.TEXT_RESET);
 
-        opcao = sc.nextInt();
+        try {
+            opcao = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("\nDigite valores inteiros!");
+            sc.nextLine();
+            opcao = 0;
+        }
 
         if (opcao == 9) {
             System.out.println(Cores.TEXT_PURPLE_BOLD + "\nBanco Zeus - O seu Futuro começa aqui!");
@@ -74,41 +73,51 @@ public class Menu {
             case 1:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Criar Conta\n\n");
 
+                KeyPress();
                 break;
             case 2:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Listar todas as Contas\n\n");
 
+                KeyPress();
                 break;
             case 3:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Consultar dados da Conta - por número\n\n");
 
+                KeyPress();
                 break;
             case 4:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Atualizar dados da Conta\n\n");
 
+                KeyPress();
                 break;
             case 5:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Apagar a Conta\n\n");
 
+                KeyPress();
                 break;
             case 6:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Saque\n\n");
 
+                KeyPress();
                 break;
             case 7:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Depósito\n\n");
 
+                KeyPress();
                 break;
             case 8:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Transferência entre Contas\n\n");
 
+                KeyPress();
                 break;
             case 9:
                 System.out.println(Cores.TEXT_WHITE_BOLD + "Sair");
 
+                KeyPress();
                 break;
             default:
                 System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n");
+                KeyPress();
                 break;
         }
     }
@@ -120,6 +129,15 @@ public class Menu {
         System.out.println("Lucas Carlos Batista - lucassscarlosss54@gmail.com");
         System.out.println("github.com/lucascarl011");
         System.out.println("*********************************************************");
+    }
+
+    public static void KeyPress() {
+        try {
+            System.out.println(Cores.TEXT_WHITE_BOLD+ "\n\nPressione Enter para Continuar...");
+            System.in.read();
+        }catch (IOException e) {
+            System.out.println("Você pressionou uma tecla diferente de enter!");
+        }
     }
 
 }

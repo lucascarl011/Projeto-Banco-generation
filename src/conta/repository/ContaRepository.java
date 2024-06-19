@@ -7,6 +7,8 @@ public interface ContaRepository {
     //CRUD da Conta
     public void procurarPorNumero(int numero);
     public void listartodas();
+
+    public void listarTodas();
     public void cadastrar(Conta conta);
     public void atualizar(Conta conta);
     public void deletar(int numero);

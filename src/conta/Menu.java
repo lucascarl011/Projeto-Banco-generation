@@ -11,7 +11,6 @@ import conta.util.Cores;
 
 public class Menu {
     public static void main(String[] args) throws Exception {
-
         Scanner leia = new Scanner(System.in);
 
         // Variáveis de entrada de dados
